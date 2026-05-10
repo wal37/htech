@@ -15,3 +15,22 @@ document.querySelectorAll('form[action="#"]').forEach((form) => {
     }, 1800);
   });
 });
+
+document.querySelectorAll('.nav-toggle').forEach((button) => {
+  const targetId = button.getAttribute("aria-controls");
+  const nav = targetId ? document.getElementById(targetId) : null;
+  if (!nav) return;
+
+  button.addEventListener("click", () => {
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!isOpen));
+    nav.classList.toggle("is-open", !isOpen);
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      button.setAttribute("aria-expanded", "false");
+      nav.classList.remove("is-open");
+    });
+  });
+});

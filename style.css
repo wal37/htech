@@ -149,8 +149,8 @@ main,
 }
 
 .header-center {
-  text-align: center;
-  justify-self: center;
+  text-align: right;
+  justify-self: end;
   padding: 0 1rem;
 }
 
@@ -167,6 +167,20 @@ main,
 .nav-shell {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.75rem 0 1rem;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7rem;
+  padding: 0 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .main-nav {
@@ -1160,7 +1174,6 @@ main,
 
 @media (max-width: 860px) {
   .header-band,
-  .nav-shell,
   .main-nav,
   .hero-actions,
   .hero-points,
@@ -1192,9 +1205,26 @@ main,
     padding: 0;
   }
 
+  .nav-shell {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0.75rem 0 1rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    justify-self: start;
+  }
+
   .main-nav {
+    display: none;
     width: 100%;
     border-radius: 1.15rem;
+    margin: 0;
+  }
+
+  .main-nav.is-open {
+    display: grid;
   }
 
   .closing-inline-form {
