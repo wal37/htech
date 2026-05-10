@@ -1080,14 +1080,14 @@ main,
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.7rem;
   margin-top: 0.4rem;
   align-items: center;
 }
 
 .footer-logo-strip img {
   width: auto;
-  max-height: 2.6rem;
+  max-height: 4rem;
   object-fit: contain;
   opacity: 0.95;
 }
